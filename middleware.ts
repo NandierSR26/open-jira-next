@@ -6,6 +6,8 @@ export function middleware(req: NextRequest) {
     // return NextResponse.redirect(new URL('/about-2', request.url))
     if( req.nextUrl.pathname.startsWith('/api/entries') ) {
         const id = req.nextUrl.pathname.replace('/api/entries', '')
+        console.log({id});
+        
         const checkMongoIDRegExp = new RegExp("^[0-9a-fA-F]{24}$");
 
         if( !checkMongoIDRegExp.test(id) ) {
@@ -24,7 +26,7 @@ export function middleware(req: NextRequest) {
 // See "Matching Paths" below to learn more
 export const config = {
     matcher: [
-        '/api/:path',
+        // '/api/:path',
         // '/api/entries/:path'
     ]
 }

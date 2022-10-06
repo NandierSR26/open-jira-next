@@ -10,7 +10,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
     const { message = 'Bad request' } = req.query
 
     res.status(400).json({
-        ok: true,
+        ok: false,
         message
     })
 }
